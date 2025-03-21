@@ -9,10 +9,12 @@ void funcao_recursiva(int numero)
     {
         printf("%d ", numero);
     }
-    else
+    else if (numero > 0)
     {
         printf("%d ", numero);
+
         funcao_recursiva(numero - 1);
+
         printf("%d ", numero);
     }
 }
@@ -20,7 +22,7 @@ void funcao_recursiva(int numero)
 
 int main()
 {
-    //Exemplo, printe um numero positivo de forma decresente e depois crescente, tipo 5 = 5 4 3 2 1 0 1 2 3 4 5
+    //Exemplo, printe um numero positivo de forma decresente e depois crescente, tipo entrada: 5, saida: 5 4 3 2 1 0 1 2 3 4 5
 
     int numero = 5;
 
