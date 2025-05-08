@@ -1,38 +1,17 @@
 #include <stdio.h>
 
-
-typedef struct exemplo
+void hanoi(int n, char origem, char auxiliar, char destino)
 {
-    int besteira;
-    
-}exemplo;
+    if (n > 0)
+    {
+        hanoi(n - 1, origem, auxiliar, destino);
+        printf("Mover disco de %c para %c\n", origem, destino);
+        hanoi(n - 1, auxiliar, destino, origem); 
+    }
+}
 
-
-union conteudo
+int main()
 {
-    int dado1;
-    double dado2;
-    char dado3;
-}conteudo;
-
-
-typedef struct lista_encadeada
-{
-    union conteudo dados;
-
-    struct lista_encadeada *proximo;
-
-
-}lista_encadeada;
-
-
-
-
-
-int main ()
-{
-
-
-
+    hanoi(4, 'A', 'B', 'C');
     return 0;
 }
